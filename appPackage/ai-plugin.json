@@ -1,0 +1,323 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "StockMaster",
+    "description_for_human": "API for managing product data",
+    "namespace": "stockmaster",
+    "functions": [
+        {
+            "name": "GetProductBySKU",
+            "description": "Retrieve a product by its SKU.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.5",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "Id: ${if(Id, Id, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "SKU: ${if(SKU, SKU, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Name: ${if(Name, Name, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Sold: ${if(Sold, Sold, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "InStock: ${if(InStock, InStock, 'N/A')}",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "UpdateProductDamageCount",
+            "description": "Update a products damage count by its SKU.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.5",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "Id: ${if(Id, Id, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "SKU: ${if(SKU, SKU, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Name: ${if(Name, Name, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Sold: ${if(Sold, Sold, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "InStock: ${if(InStock, InStock, 'N/A')}",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "GetNearingEndOfLifeFreshProducts",
+            "description": "Retrieve fresh products with 7 or fewer days until end of life.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.5",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "$data": "${$root}",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Id: ${if(Id, Id, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "SKU: ${if(SKU, SKU, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Name: ${if(Name, Name, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Sold: ${if(Sold, Sold, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "InStock: ${if(InStock, InStock, 'N/A')}",
+                                        "wrap": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "GetNearingEndOfLifeShelfProducts",
+            "description": "Retrieve shelf products with 30 or fewer days until end of life.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.5",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "$data": "${$root}",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Id: ${if(Id, Id, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "SKU: ${if(SKU, SKU, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Name: ${if(Name, Name, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Sold: ${if(Sold, Sold, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "InStock: ${if(InStock, InStock, 'N/A')}",
+                                        "wrap": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "GetHighDamageProducts",
+            "description": "Retrieve the top 5 products with the highest damage count in the last 30 days.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.5",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "$data": "${$root}",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Id: ${if(Id, Id, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "SKU: ${if(SKU, SKU, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Name: ${if(Name, Name, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Sold: ${if(Sold, Sold, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "InStock: ${if(InStock, InStock, 'N/A')}",
+                                        "wrap": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "GetHighTheftProducts",
+            "description": "Retrieve the top 5 products with the highest theft count in the last 30 days.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.5",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "$data": "${$root}",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Id: ${if(Id, Id, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "SKU: ${if(SKU, SKU, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Name: ${if(Name, Name, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Sold: ${if(Sold, Sold, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "InStock: ${if(InStock, InStock, 'N/A')}",
+                                        "wrap": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "GetProductBySKU",
+                "GetNearingEndOfLifeFreshProducts",
+                "GetNearingEndOfLifeShelfProducts",
+                "GetHighDamageProducts",
+                "GetHighTheftProducts",
+                "UpdateProductDamageCount"
+            ]
+        }
+    ],
+    "capabilities": {}
+}

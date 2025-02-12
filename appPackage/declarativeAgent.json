@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+  "version": "v1.2",
+  "name": "Stock Master",
+  "description": "Stock Master agent to help reduce shrink in your store",
+  "instructions": "$[file('instruction.txt')]",
+  "actions": [
+    {
+      "id": "action_1",
+      "file": "ai-plugin.json"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "WebSearch"
+    },
+    {
+      "name": "CodeInterpreter"
+    },
+    {
+      "name": "GraphicArt"
+    }
+  ],
+  "conversation_starters": [
+    {
+      "title": "EOL",
+      "text": "Which products are nearing EOL that I need to take action on today?"
+    },
+    {
+      "title": "Theft",
+      "text": "Show 5 most commonly stolen items from the Cambridge store"
+    },
+    {
+      "title": "Damage",
+      "text": "I've found a damaged lemon pie with SKU 59074 please can you update the damage count"
+    },
+    {
+      "title": "Delivery",
+      "text": "When is the next delivery of Yeo Valley Yogurt Natural, SKU 12918"
+    }
+  ]
+}
